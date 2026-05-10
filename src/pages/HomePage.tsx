@@ -118,19 +118,18 @@ export function HomePage() {
       gsap.set('.skills-cta', { autoAlpha: 0, y: 20 })
 
       /**
-       * Pin the block: scroll advances the timeline while the section stays fixed.
-       * Timeline 0–1 = dwell (copy hidden), then backend → frontend → CTA; after end,
-       * pin releases and normal scroll continues to README.
+       * Pin the block: scroll scrubs a short timeline (backend → frontend → CTA).
+       * Keep `end` modest so ~1–2 wheel gestures reveals content instead of a long empty dwell.
        */
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: pinEl,
           start: 'top top',
-          end: '+=2600',
+          end: '+=560',
           pin: true,
           pinReparent: true,
           pinSpacing: true,
-          scrub: 1.15,
+          scrub: 0.55,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
@@ -139,20 +138,20 @@ export function HomePage() {
       tl.fromTo(
         '.skills-data-1',
         { autoAlpha: 0, y: 28 },
-        { autoAlpha: 1, y: 0, duration: 1, ease: 'none' },
-        1,
+        { autoAlpha: 1, y: 0, duration: 0.42, ease: 'none' },
+        0,
       )
         .fromTo(
           '.skills-data-2',
           { autoAlpha: 0, y: 28 },
-          { autoAlpha: 1, y: 0, duration: 1, ease: 'none' },
-          2,
+          { autoAlpha: 1, y: 0, duration: 0.42, ease: 'none' },
+          0.34,
         )
         .fromTo(
           '.skills-cta',
           { autoAlpha: 0, y: 20 },
-          { autoAlpha: 1, y: 0, duration: 1, ease: 'none' },
-          3,
+          { autoAlpha: 1, y: 0, duration: 0.42, ease: 'none' },
+          0.68,
         )
     }, root)
 
