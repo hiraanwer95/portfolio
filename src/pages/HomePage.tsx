@@ -1,4 +1,5 @@
 import { useLayoutEffect, useMemo, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { Back, Elastic, Expo } from 'gsap/all'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -296,8 +297,8 @@ export function HomePage() {
                   </div>
 
                   <div className="skills-cta mt-6 flex justify-center md:justify-start">
-                    <a
-                      href="/works"
+                    <Link
+                      to="/works"
                       className="relative inline-block px-1 py-2 text-xs font-bold uppercase tracking-[0.14em] text-kjColorDark transition hover:opacity-80"
                     >
                       <span
@@ -305,7 +306,7 @@ export function HomePage() {
                         aria-hidden
                       />
                       <span className="relative z-10">SEE MY WORKS</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -446,9 +447,9 @@ export function HomePage() {
           </div>
 
           <div className="mt-8 flex justify-center">
-            <a href="/works" className="btn-primary">
+            <Link to="/works" className="btn-primary">
               View all works
-            </a>
+            </Link>
           </div>
         </div>
       </section>

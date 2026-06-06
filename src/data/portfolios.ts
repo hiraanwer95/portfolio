@@ -36,6 +36,12 @@ export const portfolioWorks: PortfolioItem[] = [
     ],
   },
   {
+    name: 'GZ Motors',
+    techUsed: 'Premium used vehicles · UK dealership & showroom',
+    link: 'https://gzmotors.co.uk/',
+    imgUrl: '/works/gzmotors.png',
+  },
+  {
     name: 'Muslim and Quran',
     techUsed: 'Islamic app & web — prayer times, Quran, Hadith, Qibla',
     link: 'https://muslimandquran.com/',
